@@ -1,0 +1,48 @@
+En esta actividad, los grupos de trabajo deberán aplicar los contenidos relacionados a patrones de diseño y código limpio en un proyecto existente.
+
+
+
+Enlace del repositorio: https://github.com/INF-UCT/INFO1156-AC_05-Design-Patterns
+
+Enlace de apoyo (PRs):  https://www.freecodecamp.org/espanol/news/como-hacer-tu-primer-pull-request-en-github/
+
+
+
+Instrucciones
+
+Aplicar patrones de diseño (de los 3 tipos vistos en clases) en el proyecto.
+Como grupo deberán identificar las falencias del código y resolverlas aplicando los patrones de diseño que estimen convenientes.
+Los patrones solo son aplicables en la lógica del servidor.
+El proyecto funciona, así que la funcionalidad no es el problema a resolver.
+Deberán incluir un fichero .docs/README.md donde indiquen que problema(s) identificaron y como lo solucionaron, pueden incluir diagramas de clases y/o código resumido para apoyar la explicación.
+Todos los miembros del equipo deberán aportar en el desarrollo de la actividad.
+
+
+Flujo de trabajo
+
+Cada estudiante deberá configurar el nombre público de su perfíl.
+Líder del grupo crea fork del proyecto.
+Integrantes trabajan sobre el fork del lider.
+Análisis y división de tareas en equipo.
+Cada integrante completa su parte.
+Revisión y creación de PR al repositorio original.
+Debe ser una PR por equipo.
+Cualquier commit/PR fuera del plazo de envío no será revisada.
+Marcar la PR con la etiqueta "S2" si está disponible.
+
+
+Entregables
+
+Enlace a su repositorio fork del proyecto
+Enlace a la Pull Request (PR) de su equipo al repositorio base.
+El lider del grupo debe incluir un comentario con el nombre del grupo y sus integrantes en la UI de la PR en github.
+
+
+Puntos de evaluación
+
+Cumplir con lo solicitado
+Participación grupal
+Calidad del código aplicado
+Validez y coherencia de las decisiones tomadas (patrones de diseño)
+Todas los checks de la PR deben pasar
+Se descontarán puntos proporcionalmente por la cantidad de integrantes que no participen en la actividad.

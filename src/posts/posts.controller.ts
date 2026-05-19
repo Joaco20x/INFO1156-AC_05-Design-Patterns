@@ -16,6 +16,7 @@ import { legacyModerationApi } from "@/posts/legacy-moderation.client"
 import { PrismaService } from "@/prisma/prisma.service"
 
 import { PostsService } from "@/posts/posts.service"
+import { SortingContext } from "@/posts/strategies/sorting-context"
 import {
     AddLikeDto,
     CreateCommentDto,
@@ -46,6 +47,7 @@ export class PostsController {
     constructor(
         private readonly postsService: PostsService,
         private readonly prisma: PrismaService,
+        private readonly sortingContext: SortingContext,
     ) {}
 
     @Post()
@@ -139,33 +141,7 @@ export class PostsController {
 
         let sorted = [...mappedPosts]
 
-        // Ranking inline por modo
-        // Esto define la forma de ordenar en base al filtro
-        switch (mode) {
-            case "latest":
-                sorted = sorted.sort(
-                    (a, b) => b.createdAt.getTime() - a.createdAt.getTime(),
-                )
-                break
-            case "mostLiked":
-                sorted = sorted.sort((a, b) => b.likesCount - a.likesCount)
-                break
-            case "mostCommented":
-                sorted = sorted.sort(
-                    (a, b) => b.commentsCount - a.commentsCount,
-                )
-                break
-            case "relevance":
-                sorted = sorted.sort(
-                    (a, b) => b.relevanceScore - a.relevanceScore,
-                )
-                break
-            default:
-                sorted = sorted.sort(
-                    (a, b) => b.createdAt.getTime() - a.createdAt.getTime(),
-                )
-                break
-        }
+        sorted = this.sortingContext.sort(mode, sorted)
 
         return {
             mode,
