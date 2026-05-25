@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Post {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  imageUrl    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  comments    Comment[]
+  likes       Like[]
+}
+
+model Comment {
+  id        Int      @id @default(autoincrement())
+  postId    Int
+  content   String
+  source    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+}
+
+model Like {
+  id           Int      @id @default(autoincrement())
+  postId       Int
+  reactionType String
+  weight       Int
+  source       String
+  createdAt    DateTime @default(now())
+  post         Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+}

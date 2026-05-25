@@ -1,0 +1,29 @@
+{
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": false,
+        "**/target/**": true,
+        "**/routeTree.gen.ts": true,
+    },
+    "files.readonlyInclude": {
+        "**/routeTree.gen.ts": true,
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/routeTree.gen.ts": true,
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/node_modules": true,
+        "**/build": true,
+        "**/dist": true,
+        "**/migrations": false,
+        "target": true,
+    },
+}
