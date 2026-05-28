@@ -10,6 +10,7 @@ import { EventBus } from "@/posts/events/event-bus"
 import { LoggerSubscriber } from "@/posts/events/subscribers/logger.subscriber"
 import { NotificationSubscriber } from "@/posts/events/subscribers/notification.subscriber"
 import { RecomputeSubscriber } from "@/posts/events/subscribers/recompute.subscriber"
+import { ModerationAdapter } from "@/posts/moderation/moderation-adapter"
 
 @Module({
     controllers: [PostsController],
@@ -25,6 +26,8 @@ import { RecomputeSubscriber } from "@/posts/events/subscribers/recompute.subscr
         LoggerSubscriber,
         NotificationSubscriber,
         RecomputeSubscriber,
+        // Adapter Pattern — normaliza la API legacy de moderación
+        ModerationAdapter,
     ],
 })
 export class PostsModule {}
