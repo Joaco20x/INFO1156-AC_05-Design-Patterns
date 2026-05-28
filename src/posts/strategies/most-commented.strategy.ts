@@ -5,8 +5,6 @@ import { FeedSortingStrategy } from "@/posts/strategies/feed-sorting.strategy"
 @Injectable()
 export class MostCommentedStrategy implements FeedSortingStrategy {
     sort(posts: PostEntity[]): PostEntity[] {
-        return [...posts].sort(
-            (a, b) => b.commentsCount - a.commentsCount,
-        )
+        return [...posts].sort((a, b) => b.commentsCount - a.commentsCount)
     }
 }
