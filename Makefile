@@ -56,7 +56,7 @@ run: docker-build
 	docker volume create $(DOCKER_NODE_MODULES_VOL) >/dev/null
 	docker volume create $(DOCKER_PNPM_STORE_VOL) >/dev/null
 	docker volume create $(DOCKER_DIST_VOL) >/dev/null
-	docker run --name $(DOCKER_CONTAINER) -p 3000:3000 -p 5555:5555 -e CI=true -e CHOKIDAR_USEPOLLING=true -e CHOKIDAR_INTERVAL=300 -v $(PWD):/app -v $(DOCKER_NODE_MODULES_VOL):/app/node_modules -v $(DOCKER_PNPM_STORE_VOL):/pnpm/store -v $(DOCKER_DIST_VOL):/app/dist $(DOCKER_IMAGE)
+	docker run --name $(DOCKER_CONTAINER) -p 3000:3000 -p 5555:5555 -e CI=true -e CHOKIDAR_USEPOLLING=true -e CHOKIDAR_INTERVAL=300 -v "$(PWD)":/app -v $(DOCKER_NODE_MODULES_VOL):/app/node_modules -v $(DOCKER_PNPM_STORE_VOL):/pnpm/store -v $(DOCKER_DIST_VOL):/app/dist $(DOCKER_IMAGE)
 
 stop:
 	docker rm -f $(DOCKER_CONTAINER)

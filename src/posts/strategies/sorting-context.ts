@@ -25,8 +25,7 @@ export class SortingContext {
     }
 
     sort(mode: string, posts: PostEntity[]): PostEntity[] {
-        const strategy =
-            this.strategies[mode] || this.strategies["latest"]
+        const strategy = this.strategies[mode] || this.strategies["latest"]
         return strategy.sort(posts)
     }
 }

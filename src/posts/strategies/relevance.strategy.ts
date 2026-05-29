@@ -5,8 +5,6 @@ import { FeedSortingStrategy } from "@/posts/strategies/feed-sorting.strategy"
 @Injectable()
 export class RelevanceStrategy implements FeedSortingStrategy {
     sort(posts: PostEntity[]): PostEntity[] {
-        return [...posts].sort(
-            (a, b) => b.relevanceScore - a.relevanceScore,
-        )
+        return [...posts].sort((a, b) => b.relevanceScore - a.relevanceScore)
     }
 }
